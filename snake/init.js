@@ -14,6 +14,10 @@ var delta;
 
 var runningFlag = true;
 var score = 0;
+var LEFT_ARROW = 37;
+var UP_ARROW = 38;
+var RIGHT_ARROW = 39;
+var DOWN_ARROW = 40;
 
 // DRAW SNAKE
 var s = new Snake();
@@ -23,34 +27,35 @@ s.setVelocity(new Vector(absoluteV, 0));
 
 
 var obstacle = new Egg();
+console.log('haahh');
+EventUtil.addHandler(window, 'keydown', function (event) {
+    console.log(event);
 
-window.addEventListener('keydown', function (event) {
-
-    if (event.key === 'ArrowUp') {
+    if (event.keyCode === UP_ARROW) {
         velocity = new Vector(0, -absoluteV);
         s.setVelocity(velocity);
     }
-    else if(event.key === 'ArrowDown') {
+    else if(event.keyCode === DOWN_ARROW) {
         velocity = new Vector(0, absoluteV);
         s.setVelocity(velocity);
     }
-    else if(event.key === 'ArrowLeft') {
+    else if(event.keyCode === LEFT_ARROW) {
         velocity = new Vector(-absoluteV, 0);
         s.setVelocity(velocity);
     }
-    else if(event.key === 'ArrowRight') {
+    else if(event.keyCode === RIGHT_ARROW) {
         velocity = new Vector(absoluteV, 0);
         s.setVelocity(velocity);
     } 
 });
 
 var pauseBtn = document.querySelector("#pause");
-pauseBtn.addEventListener('click', function () {
+EventUtil.addHandler(pauseBtn, 'click', function () {
     runningFlag = false;
 });
 
 var runBtn = document.querySelector("#run");
-runBtn.addEventListener('click', function () {
+EventUtil.addHandler(runBtn, 'click', function () {
     runningFlag = true;
     loop();
 });
