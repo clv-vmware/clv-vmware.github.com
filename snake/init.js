@@ -28,8 +28,6 @@ s.setVelocity(new Vector(absoluteV, 0));
 
 var obstacle = new Egg();
 EventUtil.addHandler(window, 'keydown', function (event) {
-    // console.log(event);
-
     if (event.keyCode === UP_ARROW) {
         velocity = new Vector(0, -absoluteV);
         s.setVelocity(velocity);
