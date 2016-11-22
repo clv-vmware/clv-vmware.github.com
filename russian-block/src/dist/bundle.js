@@ -35,7 +35,7 @@ var velocity = new Vector(0, 30);
 
 function GameScene () {
     this.blockMap = this.initBlockMap();
-    this.blockClolorMap = this.initBlockColorMap();
+    // this.blockClolorMap = this.initBlockColorMap();
 }
 
 GameScene.prototype = {
@@ -82,7 +82,7 @@ GameScene.prototype = {
         var i = Math.floor(pos.y / 30);
         // console.log(i, j);
         this.blockMap[i][j] = true;
-        this.initBlockColorMap[i][j] = '';
+        // this.initBlockColorMap[i][j] = '';
         PrintUtils.printColInMatrix(this.blockMap, 0);
 
         this.createSquare();
