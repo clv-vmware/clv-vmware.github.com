@@ -207,7 +207,7 @@ var PaintUtils = require('./utils/PaintUtils');
 
 function Square (pos) {
     this.pos = pos;
-    this.color = color;
+    // this.color = color;
     this.size = Constants.SQUARE_SIZE;
 }
 

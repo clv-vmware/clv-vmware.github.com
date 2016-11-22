@@ -1,1 +1,0 @@
-console.error("Error: Cannot find module '/Users/lvyuanyuan/node/prapra/cocos/HTML_Game/russian-block/main.js' from '/Users/lvyuanyuan/node/prapra/cocos/HTML_Game/russian-block'");
