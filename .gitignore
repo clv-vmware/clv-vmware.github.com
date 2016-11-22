@@ -1,6 +1,16 @@
 _site/*
 _theme_packages/*
 
+de_modules/
+.DS_Store
+.orig
+.vscode/
+.swp
+.cache/
+npm-debug.log
+.idea/
+.mp3
+.png
 Thumbs.db
 .DS_Store
 
