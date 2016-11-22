@@ -141,7 +141,7 @@ function update () {
         curPos = square.move(velocity);
     }
     else { // hit case
-        gameScene.updateBlockMap(curPos, color);
+        gameScene.updateBlockMap(curPos);
     }
 }
 
