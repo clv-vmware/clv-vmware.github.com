@@ -96,6 +96,10 @@ GameScene.prototype = {
         for (var i = 0;i < 16; i++ ) {
             var rowFullFlag = true;
             for (var j = 0;j < 10;j++) {
+                // update color
+                if (p[i][j] > 0) {
+                    this.blockColorMap[i][j] = color;
+                }
                 this.blockMap[i][j] = this.blockMap[i][j] + p[i][j];
                 if (this.blockMap[i][j] === 0) rowFullFlag = false;
                 
@@ -105,22 +109,12 @@ GameScene.prototype = {
                 MathUtils.clearOneRow(this.blockMap, i);
                 score++;
             }
-        }
+            
 
-
-        for (var i = 0;i < 16; i++ ) {
-            for (var j = 0;j < 10;j++) {
-                if (p[i][j] > 0) {
-                    this.blockColorMap[i][j] = color;
-                }
-                
-            }
         }
-        
         // PrintUtils.printMatrix(this.blockMap);
         
         // console.log(pos, i, j, color, PrintUtils.printColInMatrix(this.blockColorMap, 0));
-
         this.createTetromino();
     },
 
@@ -134,7 +128,7 @@ GameScene.prototype = {
                 pos[i][j] = this.blockMap[i][j] + pos[i][j];
                 if (pos[i][j] > 1 && testTetromino.velocity.x === 0) 
                 {
-                    PrintUtils.printMatrix(pos);
+                    // PrintUtils.printMatrix(pos);
                     return true;
                 }
             }
@@ -213,8 +207,10 @@ function update () {
     // TODO : 此处逻辑混乱，重新理清楚 ！！！
     if (PaintUtils.isTetrominoInBoundry(nextPos)) {
         if (!gameScene.checkCollide(nextPos)) {
-            // var collideMap = this.getCollideMap();
             curPos = testTetromino.move();
+        }
+        else if (testTetromino.velocity.y > 1){
+            
         }
         else  if (testTetromino.velocity.x !== 0) {
             testTetromino.setVelocity(new Vector(0, 1));
@@ -229,6 +225,9 @@ function update () {
         console.log('hit the boundry case!');
         if (testTetromino.velocity.x !== 0) {
             testTetromino.setVelocity(new Vector(0, 1));
+        }
+        else if (testTetromino.velocity.y > 1){
+
         }
         else { // hit case!
             console.log('hit!', curPos);
