@@ -5,15 +5,31 @@
             #gameScene {
                 background-color: #000;
             }
+
+            #gameOverModal {
+                position: absolute;
+                left: 8;
+                top: 8;
+                background-color: cornflowerblue;
+                height: 481px;
+                width: 300px;
+                opacity: 0.7;
+                z-index: 2;
+                text-align: center;
+                line-height: 481px;
+
+            }
             
         </style>
     </head>
     <body>
-        <canvas id="gameScene" height="480" width="300"></canvas>
+        <canvas id="gameScene" height="481" width="300"></canvas>
         <input type="button" id="pause" value="pause"/>
         <input type="button" id="run" value="run"/>
+        <input type="button" id="newGame" value="newGame"/>
         <div id="score"></div>
+        <div id="gameOverModal">SORRY, GAME OVER!</div>
         
     </body>
-    <script src="./russian-block/src/dist/bundle.js"></script>
+    <script src="./src/dist/bundle.js"></script>
 </html>
