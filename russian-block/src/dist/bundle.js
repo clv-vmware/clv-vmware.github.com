@@ -27,6 +27,9 @@ var Constants = {
 
 module.exports = Constants;
 },{"./Vector":5}],2:[function(require,module,exports){
+/**
+ * TODO: 结束界面 逻辑？ 
+ */
 var Vector = require('./Vector');
 var Square = require('./Square');
 var Tetromino = require('./Tetromino');
@@ -92,9 +95,11 @@ GameScene.prototype = {
         // 检查 pos 和 现有堆积的squares 的连通性
         var p = MathUtils.convertVectorList(pos);
         // PrintUtils.printMatrix(p);
-
+        var rowsPlaceHolder = new Array(16);
+        
         for (var i = 0;i < 16; i++ ) {
             var rowFullFlag = true;
+            rowsPlaceHolder[i] = false;
             for (var j = 0;j < 10;j++) {
                 // update color
                 if (p[i][j] > 0) {
@@ -102,6 +107,7 @@ GameScene.prototype = {
                 }
                 this.blockMap[i][j] = this.blockMap[i][j] + p[i][j];
                 if (this.blockMap[i][j] === 0) rowFullFlag = false;
+                if (this.blockMap[i][j] > 0) rowsPlaceHolder[i] = true;
                 
             }
             if (rowFullFlag) {
@@ -109,8 +115,13 @@ GameScene.prototype = {
                 MathUtils.clearOneRow(this.blockMap, i);
                 score++;
             }
-            
-
+        }
+        // GAME OVER detect
+        var everyRowIsPlaced = rowsPlaceHolder.every(function (item) {return item === true});
+        if (everyRowIsPlaced) {
+            runningFlag = false;
+            // open the GAME OVER modal!
+            gameOverModal.style.display = "block";
         }
         // PrintUtils.printMatrix(this.blockMap);
         
@@ -216,13 +227,13 @@ function update () {
             testTetromino.setVelocity(new Vector(0, 1));
         }
         else { // hit case!
-            console.log('hit!', curPos);
+            // console.log('hit!', curPos);
             gameScene.updateBlockMap(curPos, testTetromino.color);
         }
     }
     else {// OUT OF BOUNDRY CASE
         // 向左会触发 here
-        console.log('hit the boundry case!');
+        // console.log('hit the boundry case!');
         if (testTetromino.velocity.x !== 0) {
             testTetromino.setVelocity(new Vector(0, 1));
         }
@@ -230,7 +241,7 @@ function update () {
 
         }
         else { // hit case!
-            console.log('hit!', curPos);
+            // console.log('hit!', curPos);
             gameScene.updateBlockMap(curPos, testTetromino.color);
         }
     }
@@ -259,11 +270,23 @@ function initButtons () {
     });
 
     var runBtn = document.querySelector("#run");
-    
     EventUtils.addHandler(runBtn, 'click', function () {
         runningFlag = true;
         queue();
     });
+
+    var gameOverModal = document.querySelector("#gameOverModal");
+    gameOverModal.style.display = "none";
+
+    var newGameBtn = document.querySelector("#newGame");
+    EventUtils.addHandler(newGameBtn, 'click', function () {
+        MathUtils.clearAllRows(gameScene.blockMap);
+        gameOverModal.style.display = "none";
+        runningFlag = true;
+        queue();
+    });
+
+
 }
 
 function listenKeyBoardEvent () {
@@ -745,6 +768,16 @@ var MathUtils = {
         }
         for (var k = 0;k < 10;k++) {
             map[0][k] = 0;
+        }
+    },
+
+    clearAllRows: function (map) {
+        var rowLen = map.length;
+        var colLen = map[0].length;
+        for (var i = 0;i < rowLen; i++) {
+            for (var j = 0;j < rowLen; j++) {
+                map[i][j] = 0;
+            }
         }
     }
 
