@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Redux store 
+title: Redux store 2
 date: 2017-02-01
 categories: translation
 ---
