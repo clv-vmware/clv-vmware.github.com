@@ -4,7 +4,7 @@ title: Redux store 2
 date: 2017-02-01
 categories: translation
 ---
-###Store
+### Store
 
 store负责维护整个 state tree
 改变store里state的唯一方法就是dispatch action
