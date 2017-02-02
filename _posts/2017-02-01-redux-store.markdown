@@ -50,22 +50,22 @@ middleware 是由社区开发并不是跟Redux 天生就在一块的。需要显
 `returns` 返回解绑函数
 
 ```javascript
-	function select(state) {
-	  return state.some.deep.property
-	}
-	
-	let currentValue
-	function handleChange() {
-	  let previousValue = currentValue
-	  currentValue = select(store.getState())
-	
-	  if (previousValue !== currentValue) {
-	    console.log('Some deep nested property changed from', previousValue, 'to', currentValue)
-	  }
-	}
-	
-	let unsubscribe = store.subscribe(handleChange)
-	unsubscribe()
+function select(state) {
+    return state.some.deep.property
+}
+
+let currentValue
+function handleChange() {
+    let previousValue = currentValue
+    currentValue = select(store.getState())
+
+    if (previousValue !== currentValue) {
+    console.log('Some deep nested property changed from', previousValue, 'to', currentValue)
+    }
+}
+
+let unsubscribe = store.subscribe(handleChange)
+unsubscribe()
 ```
 
 
