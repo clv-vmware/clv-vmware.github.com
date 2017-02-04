@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 翻译   Particle System
+title: Particle System
 date: 2017-02-03
 categories: translation
 ---
