@@ -341,6 +341,7 @@ var fields = [new Field(new Vector(400, 230), -140)];
 ```
 
 我们需要每个粒子根据field的速度和加速度来更新，所以我们要为Particle 加上一个方法。其中一些逻辑可能放在Vector中更好，但考虑到性能问题，我们把它放到这里。
+
 ```
 Particle.prototype.submitToFields = function (fields) {
   // our starting acceleration this frame
