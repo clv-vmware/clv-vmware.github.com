@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 翻译 Particle System
+title: 翻译 Build A JavaScript* Particle System in 200 Lines
 date: 2017-02-03
 categories: translation
 ---
