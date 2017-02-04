@@ -4,11 +4,12 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var particles = [];
+var objectSize = 1;
  
 // Add one emitter located at `{ x : 100, y : 230}` from the origin (top left)
 // that emits at a velocity of `2` shooting out from the right (angle `0`)
 var emitters = [new Emitter(new Vector(100, 230), Vector.fromAngle(0, 2))];
-var maxParticles = 200; // experiment! 20,000 provides a nice galaxy
+var maxParticles = 20000; // experiment! 20,000 provides a nice galaxy
 var emissionRate = 4; // how many particles are emitted each frame
 function addNewParticles() {
   // if we're at our max, stop emitting.
