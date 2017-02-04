@@ -1,16 +1,18 @@
 ---
 layout: post
-title: Particle System
+title: [翻译]Particle System
 date: 2017-02-03
 categories: translation
 ---
+[原文地址](https://software.intel.com/en-us/html5/hub/blogs/build-a-javascript-particle-system-in-200-lines)
+
 我们用不到200行js代码实现一个带有多个发射器和可以吸引或者驱散发射区域的小型粒子系统
 这是我刚开始从事js开发时的一个个人项目。我不是一个数学家，物理学家或是游戏程序员所以有很多更好的方法去接触这里写到的逻辑。即使是这样，这个例子也是很好的来学习js性能的实例
 从这个项目中最受益的是勇敢的跨过graphic的入门这一步。如果你有text editor和浏览器，你就可以制作visualization 或者是video game
 
-#### setting up environment
+#### Setting Up Environment
 
-我们不打算深入canvas有关的内容，这里有一些[details] (https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial).
+我们不打算深入canvas有关的内容，这里有一些[details](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial).
 
 ```javascript
 <!DOCTYPE html>
@@ -26,9 +28,11 @@ categories: translation
 #### canvas obj
 
 为了获取canvas obj, 我们先要拿到元素，任何你喜欢的方式都OK。
+
 ```
 	var canvas = document.querySelector('canvas');
 ```
+
 canvas元素有许多个contexts,我们需要用到的是basic 2d context, 这让我们能像bitmap一样操作canvas，这里是一些[参考API](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D)
 
 ```
@@ -41,8 +45,8 @@ var ctx = canvas.getContext('2d');
 ```
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
 ```
+
 #### Animation Loop
 
 animation loop 是第一个稍微陌生的概念如果你之前从事传统app开发的话。当用这种方法处理graphics 你可能会通过控制 drawing来管理系统的状态,你有两个不同的步骤来做update draw.你也需要清除当前画布然后排队下一个animation cycle。animation loop 如下概括
@@ -66,9 +70,9 @@ function clear () {
 调用下一次动画循环可以使用setTimeout(), 但是它会带来诸多问题，所以我们用[requestAnimationFrame API](https://developer.mozilla.org/en-US/docs/Web/API/window.requestAnimationFrame) 来让浏览器告诉我们什么时候该调用下一帧。这个方法是没有前缀的，如果你需要做老的就浏览器的兼容问题，这有一些[参考](https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/)
 
 ```
-	function queue () {
-		window.requestAnimationFrame(loop);
-	}
+function queue () {
+    window.requestAnimationFrame(loop);
+}
 ```
 
 update() 和 draw() 方法涵盖了大部分逻辑but you can stub them out for now and then initiate the first run of your loop to set up a solid foundation for canvas experimentation.
@@ -119,7 +123,9 @@ function queue() {
  
 loop();
 ```
+
 ### Particle basics
+
 从粒子系统的base版本中，我们考虑空间中一个移动的点，为了表示这样的状态，我们至少需要存储：position, velocity, acceleration.每一个属性可以用二维向量来表示，所以我们从构建vector开始。
 
 #### Vector
@@ -183,6 +189,7 @@ Particle.prototype.move = function () {
   this.position.add(this.velocity);
 };
 ```
+
 ### Particle Emitter 
 
 emitter 是发射particle的obj.emitter可以是产生particles的任何东西，烟花，篝火等等可以产生sparkle fade效果的粒子.
@@ -217,6 +224,7 @@ Emitter.prototype.emitParticle = function() {
   return new Particle(position,velocity);
 };
 ```
+
 #### Our First Animation!
 
 我们已经有了构建基本particle sys的大部分内容，现在来填充update() 和draw()
@@ -401,11 +409,12 @@ function draw() {
   emitters.forEach(drawCircle);
 }
 ```
+
 ###Demos
 
 cong! [final demo here](http://codepen.io/jsoverson/full/KtxmA)
 
-试用一些不同的emitter和field组合。这里有几个徐鹤供参考
+试用一些不同的emitter和field组合。这里有几个组合供参考
 
 ```
 var emitters = [
