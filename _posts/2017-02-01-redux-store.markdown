@@ -60,12 +60,16 @@ function handleChange() {
     currentValue = select(store.getState())
 
     if (previousValue !== currentValue) {
-    console.log('Some deep nested property changed from', previousValue, 'to', currentValue)
+    console.log('Some deep nested property changed from', previousValue, 'to',
+        currentValue)
     }
 }
 
 let unsubscribe = store.subscribe(handleChange)
 unsubscribe()
 ```
+#### replaceReducer(nextReducer)
+
+替换目前使用的reducer。这是一个高级API。在需要动态载入reducer时会用到，或者是需要完成hot reloading 机制的时候。
 
 
