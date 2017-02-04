@@ -106,9 +106,20 @@ function update() {
     addNewParticles();
     plotParticles(canvas.width, canvas.height);
 }
+
+// `object` is a field or emitter, something that has a drawColor and position
+function drawCircle(object) {
+  ctx.fillStyle = object.drawColor;
+  ctx.beginPath();
+  ctx.arc(object.position.x, object.position.y, objectSize, 0, Math.PI * 2);
+  ctx.closePath();
+  ctx.fill();
+}
  
 function draw() {
-// stub
+    drawParticles();
+    fields.forEach(drawCircle);
+    emitters.forEach(drawCircle);
 }
  
 loop();
