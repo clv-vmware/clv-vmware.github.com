@@ -10,7 +10,7 @@ categories: translation
 这是我刚开始从事js开发时的一个个人项目。我不是一个数学家，物理学家或是游戏程序员所以有很多更好的方法去接触这里写到的逻辑。即使是这样，这个例子也是很好的来学习js性能的实例
 从这个项目中最受益的是勇敢的跨过graphic的入门这一步。如果你有text editor和浏览器，你就可以制作visualization 或者是video game
 
-#### Setting Up Environment
+## Setting Up Environment
 
 我们不打算深入canvas有关的内容，这里有一些[details](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial).
 
@@ -25,7 +25,7 @@ categories: translation
 
 就是这样！这三个嵌套的标签就是我们html的骨架。
 
-#### canvas obj
+## canvas obj
 
 为了获取canvas obj, 我们先要拿到元素，任何你喜欢的方式都OK。
 
@@ -47,7 +47,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 ```
 
-#### Animation Loop
+## Animation Loop
 
 animation loop 是第一个稍微陌生的概念如果你之前从事传统app开发的话。当用这种方法处理graphics 你可能会通过控制 drawing来管理系统的状态,你有两个不同的步骤来做update draw.你也需要清除当前画布然后排队下一个animation cycle。animation loop 如下概括
 
@@ -124,11 +124,11 @@ function queue() {
 loop();
 ```
 
-### Particle basics
+## Particle basics
 
 从粒子系统的base版本中，我们考虑空间中一个移动的点，为了表示这样的状态，我们至少需要存储：position, velocity, acceleration.每一个属性可以用二维向量来表示，所以我们从构建vector开始。
 
-#### Vector
+## Vector
 
 这个对象会被经常用到。如果我们操纵10000 个粒子运动以每秒30帧的速率，我们对每一个粒子的3个属性都使用一个vector表示，也就是说每秒我们会创建和丢弃将近100 000 个对象。基于这样的考虑，vector需要优化。我会在别处另谈优化问题，现在我们先来考虑实现问题。
 
@@ -166,7 +166,7 @@ Vector.fromAngle = function (angle, magnitude) {
 };
 ```
 
-#### Particle 
+## Particle 
 
 现在我们可以把Vector组合起来了。传入参数并设置默认值，至少我们现在有了静止在原点的particle。
 
@@ -190,7 +190,7 @@ Particle.prototype.move = function () {
 };
 ```
 
-### Particle Emitter 
+## Particle Emitter 
 
 emitter 是发射particle的obj.emitter可以是产生particles的任何东西，烟花，篝火等等可以产生sparkle fade效果的粒子.
 
@@ -225,7 +225,7 @@ Emitter.prototype.emitParticle = function() {
 };
 ```
 
-#### Our First Animation!
+## Our First Animation!
 
 我们已经有了构建基本particle sys的大部分内容，现在来填充update() 和draw()
 我们用数组来描述particles和emitters的container
@@ -314,7 +314,7 @@ function drawParticles() {
 }
 ```
 
-#### Adding Fields
+## Adding Fields
 
 在这个demo里我们的filed指的是一个attract 或者repel粒子的space.mass 参数可以是正数也可以是负数，我们为mass配置一个setter方法，以至于drawColor 方法能够根据field的类型来用不同颜色渲染（吸引green 排斥红色）。
 
@@ -411,7 +411,7 @@ function draw() {
 }
 ```
 
-### Demos
+## Demos
 
 cong! [final demo here](http://codepen.io/jsoverson/full/KtxmA)
 

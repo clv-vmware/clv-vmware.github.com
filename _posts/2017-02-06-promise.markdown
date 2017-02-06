@@ -5,23 +5,23 @@ date: 2017-02-02
 categories: translation
 ---
 
-### promise
+## promise
 
 promise 对象用于异步计算。一个promise 代表一个可能是现在，将来，或者never available的值。
 
-### Syntax
+## Syntax
 
 ```
 new Promise(/* executor */ function (resolve, reject) {...})
 ```
 
-### Parameters
+## Parameters
 
-#### executor
+## executor
 executor 是传入promise的参数，它是一个带有resolve 和reject 两个参数的function。promise对象一创建executor 就会执行，并传递resolve和reject function（executor甚至调用在promise constructor 返回obj之前）。当resolve 和reject function 调用时，会解决或者拒绝promise。executor通常会做一些异步的初始化工作，然后会调用resolve解决promise或者是reject 如果发生error
 如果一个error 在executor中被抛出， promise就会rejected.executor的返回值将会被忽略。
 
-### Description
+## Description
 
 一个promise是一个value 在promise创建的时刻还不确定的代理。它允许你去为异步事件的成功获取或者失败绑定handler。这使得异步methods 可以像同步metrods一样返回：异步方法不会像同步方法一样立即返回最终value, 而是返回一个promise对象在将来某个时间点来提供value.
 
@@ -33,52 +33,52 @@ executor 是传入promise的参数，它是一个带有resolve 和reject 两个�
 
 一个pending promise或者会被完成然后返回一个value 或者被rejected.当其中之一发生时，由于promise的then方法调用，相关的handlers 会被出队。（如果当对应的handler绑定的时候，promise被完成或者被拒绝，handler就会被调用，所以在异步操作完成和handlers被绑定没有竞争条件）
 由于[Promise.prototype.then()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) 和 [Promise.prototype.catch()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch) 方法返回也会返回promises,所以可以chained
-### properties
+## properties
 
-#### promise.length
+## promise.length
 
 长度属性，通常为1（constructor参数个数，只有一个executor）
 
-#### promise.prototype
+## promise.prototype
 
-### Methods
+## Methods
 
 
-#### promise.all(iterable)
+## promise.all(iterable)
 
 如果可迭代的参数(promises)所有都fulfills返回一个fulfill 的promise， 如果有一个promise reject 则返回reject的promise.如果全部promises fulfill ,返回所有promise fullfill的value的array,顺序与迭代器相同。如果promise reject, reject 携带第一个失败的error.这个方法在聚合多个promise结果时很有用。
 
-#### promise.race(iterable)
+## promise.race(iterable)
 
 返回第一个settled 的promise, 并带有该promise 的 value或者 error reason
 
-#### promise.reject(reason)
+## promise.reject(reason)
 
 返回被rejected的promise
 
-#### promise.resolve(value)
+## promise.resolve(value)
 
 返回一个被resolved promise。 如果该value是thenable (例如，有then 方法)，返回的promise 将会在then 后执行，采用它的事件状态；否则，返回的promise 将会被该值 fulfilled。通常，如果你不知道是否一个value 是不是promise, 就用promise.resolve(value)把它当做promise来处理。
 
-### promise prototype
+## promise prototype
 
-#### properties 
+## properties 
 
-#### promise.prototype.constructor
+## promise.prototype.constructor
 
 返回创建一个实例原型的函数。在这里就是promise()
 
-#### methods
+## methods
 
-#### ?promise.prototype.catch(onRejected)
+## ?promise.prototype.catch(onRejected)
 
 为promise 附加上一个rejection handler,and returns a new promise resolving to the return value of the callback if it is called, or to its original fulfillment value if the promise is instead fulfilled.
 
-#### ?promise.prototype.then(onFulfilled, onRejected)
+## ?promise.prototype.then(onFulfilled, onRejected)
 
 为promise追加fulfillment 和rejection handlers,and returns a new promise resolving to the return value of the callback if it is called, or to its original fulfillment value if the promise is instead fulfilled.
 
-### examples
+## examples
 
 这是一个promise 的小栗子。每次button click 都会调用testPromise()。它创建一个promise 使用setTimeout（）每1-3 秒就会随机被fulfill。
 promise 的 fulfillment会通过p1.then() 设定的callback打印。log可以帮助显示同步方法是怎样与异步方法解耦的。
