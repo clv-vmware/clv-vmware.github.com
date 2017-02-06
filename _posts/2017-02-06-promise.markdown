@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Redux Core Concept
+title: promise
 date: 2017-02-02
 categories: translation
 ---
@@ -9,7 +9,7 @@ categories: translation
 
 promise 对象用于异步计算。一个promise 代表一个可能是现在，将来，或者never available的值。
 
-###Syntax
+### Syntax
 
 ```
 new Promise(/* executor */ function (resolve, reject) {...})
@@ -36,11 +36,13 @@ executor 是传入promise的参数，它是一个带有resolve 和reject 两个�
 ### properties
 
 #### promise.length
+
 长度属性，通常为1（constructor参数个数，只有一个executor）
 
 #### promise.prototype
 
 ### Methods
+
 
 #### promise.all(iterable)
 
@@ -73,6 +75,7 @@ executor 是传入promise的参数，它是一个带有resolve 和reject 两个�
 为promise 附加上一个rejection handler,and returns a new promise resolving to the return value of the callback if it is called, or to its original fulfillment value if the promise is instead fulfilled.
 
 #### ?promise.prototype.then(onFulfilled, onRejected)
+
 为promise追加fulfillment 和rejection handlers,and returns a new promise resolving to the return value of the callback if it is called, or to its original fulfillment value if the promise is instead fulfilled.
 
 ### examples

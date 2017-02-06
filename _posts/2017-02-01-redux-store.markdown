@@ -4,14 +4,14 @@ title: Redux Store
 date: 2017-02-01
 categories: translation
 ---
-###Store
+### Store
 
 store负责维护整个 state tree
 改变store里state的唯一方法就是dispatch action
 
 store 并不是一个class. 它是一个带有一些methods的对象。通过 传递 root reducing function 给createStore 方法来创建store.
 
-#### a note for flux users
+#### A Note for Flux Users
 
 如果你使用flux, 那么有一点需要注意。redux 没有单独的dispatcher类也不支持多store
 
@@ -68,6 +68,7 @@ function handleChange() {
 let unsubscribe = store.subscribe(handleChange)
 unsubscribe()
 ```
+
 #### replaceReducer(nextReducer)
 
 替换目前使用的reducer。这是一个高级API。在需要动态载入reducer时会用到，或者是需要完成hot reloading 机制的时候。
@@ -85,6 +86,25 @@ middleware 没有被集成进createStore 也不是redux 架构的基础部分，
 
 ### Returns
 返回一个应用mw 的 store enhancer。 store enhancer 签名是 `createStore => createStore'`但是最简单的方式是把mw当做createStore（）的最后一个参数传入
+
+## createStore（reduver, [preloadedState], [enhancer]）
+
+创建一个维护状态树的redux store ，只能有一个store.
+
+### Arguments
+
+* reducer: 返回下一个state tree 的reducing function
+* preloaderState(可选): 初始state。如果你传入的是combineReducers产生的reducer,this must be a plain object with the same shape as the keys passed to it.如果不是，则可以穿入任何reducer能理解的东西。
+* enhancer
+
+### createStore tips
+
+* 不要创建多于一个的store, 用cimbineReducers进行合并
+* state 的格式随你选择。你可以用普通的obj或者是immutable.如果你选用普通obj， 确保不要mutate it！例如，你应该使用
+`Object.assign({}, state, newDate)` 而不是`Object.assign(state, newDate)`。如果支持对象扩张的话，还可以用`{...state, ...newData}`
+* 
+
+
 
 
 
