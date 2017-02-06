@@ -72,4 +72,21 @@ unsubscribe()
 
 替换目前使用的reducer。这是一个高级API。在需要动态载入reducer时会用到，或者是需要完成hot reloading 机制的时候。
 
+## applyMiddleware(...middlewares)
+
+middleware 是实现 redux扩展功能的建议方式。middleware 让你根据你的需求包装store 的dispatch。middleware关键特征是可组合。多个middleware 在不知道chain 上其他mw 的情况下组合成一个mw chain.
+最常见的使用场景是不安装其他依赖库像RxJS的情况下支持异步action。让你像其他normal actions一样dispatch 异步actions.
+例如，redux-thunk 通过让action creators dispatch function 来实现。接收dispatch作为参数然后异步的调用它。这样的functions 叫做thunks.另一个mw是 redux-promise. 它支持dispatch 一个promise 异步action，并且当promise resolve时dispatch 一个普通的action.
+middleware 没有被集成进createStore 也不是redux 架构的基础部分，但是它是很重要的。This way, there is a single standard way to extend dispatch in the ecosystem, and different middleware may compete in expressiveness and utility.
+
+### Arguments
+
+...middlewares(arguments): 遵守reudx middleware api 的函数。每个mw接收Store's dispatch 和getState 作为命名参数，并返回一个function。这个函数将被给下一个mw的dispatch 方法，并期望去返回一个
+
+### Returns
+返回一个应用mw 的 store enhancer。 store enhancer 签名是 `createStore => createStore'`但是最简单的方式是把mw当做createStore（）的最后一个参数传入
+
+
+
+
 
