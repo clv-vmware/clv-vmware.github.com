@@ -1,0 +1,27 @@
+---
+layout: post
+title: React-Redux usage 
+date: 2017-02-01
+categories: translation
+---
+[原文](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+
+Fetch API 为fetching资源（包括网络请求）提供了接口。对于用过XMLHttpRequest的人来说它不会太陌生，新的API提供了更灵活更强大的功能。
+
+## Concepts and usage
+
+fetch 为Request 和Response对象（还有一些其他网络相关请求）提供了通用的定义。这将会扩展它以后的应用场景。
+不论是用于service workers, Cache API或者是其他相似的处理requests 和response 的东西。
+它也提供一些相关概念像CORS 和HTTP 头等，将之前分散的概念集中起来。
+发一个请求获取资源只需要使用[GlobalFetch.fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch)方法，在多个接口这个方法都被实现了，尤其是Window WorkerGlobalScope.这使得在不同context种，它都能被方便获取。
+fetch() 方法有一个强制的参数，想要fetch的资源的路径
+
+
+## Response 
+
+[Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
+
+Fetch API的Reponse 接口代表了一个请求的响应。
+你可以用Response.Response()构造函数创建一个新的Response obj。但是更常见的情况是，你是在其他API的返回中得到一个Response obj.例如Fetchevent.respondWith,或者是GlobalFetch.fetch()
+
+## Request
