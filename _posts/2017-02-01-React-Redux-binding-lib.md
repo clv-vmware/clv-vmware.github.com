@@ -14,3 +14,35 @@ React-Redux 绑定库借鉴了分离表现组件和容器组件的idea. 大部�
 
 API
 主要有两个概念： 一个是Provider store；一个是connect
+
+## React-Redux
+
+## API <Provider store>
+使Redux store能够通过connect（） 调用在下层组件获得被获得。通常，会采用<Provider>包裹根组件，然后在下层调用connect() 获得store的模式。
+## props
+* store: redux中唯一的store
+* children: 被包裹的根组件
+
+## ExamPle
+```
+ReactDOM.render(
+  <Provider store={store}>
+    <MyRootComponent />
+  </Provider>,
+  rootEl
+)
+
+```
+
+## Connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
+
+连接react component 和redux store.connect 是connectAdvanced的外观方法，对大多数场景提供通用方案。
+它不修改传入的component class，而是会返回一个新的connected component class.
+
+## Arguments
+
+
+
+
+
+

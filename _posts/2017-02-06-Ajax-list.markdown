@@ -1,0 +1,15 @@
+---
+layout: post
+title: Ajax List
+date: 2017-02-06
+categories: translation
+---
+
+## Ajax
+
+Asynchronous Javascript + XML , 本身并不是一项技术，这是一个在2005年被  Jesse James Garrett提出的名词, 用于描述一项采用了现有HTML/XHTML, CSS JS DOM XML XSTL XHR技术的新方法。
+当这些技术在Ajax model被结合, web app 能够更快的更新在不刷新页面的情况下。
+尽管Ajax 中的X 代表XML，JSON最近用的比XML更为广泛由于它的轻量。JSON和XML在Ajax模型中用作打包信息。
+## Documentation
+
+[Getting Started](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started) 这篇文章给出一个Ajax基本认识，并给出两个实用的例子
