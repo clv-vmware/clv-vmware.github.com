@@ -36,10 +36,16 @@ ReactDOM.render(
 
 ## Connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
 
+未完 TODO
+http://taobaofed.org/blog/2016/08/18/react-redux-connect/
 连接react component 和redux store.connect 是connectAdvanced的外观方法，对大多数场景提供通用方案。
 它不修改传入的component class，而是会返回一个新的connected component class.
 
 ## Arguments
+
+* [mapStateToProps(state, [ownProps]): stateProps]（Function）如果这个参数指定了的话，返回的新的component 会接受redux store updates.也就是说任何时候store更新了，`mapStateToProps`就会被调用，`mapStateToProps`返回的结果一定要是普通对象，它将会被merge进component's props.如果你不想订阅store的更新， 在`mapStateToProps` 的位置传入null 或者undefined. 如果`ownProps`作为作为第二个参数被指定，那它的值会被作为props传入component, mapStateToProps会被重新触发当comp收到新的props(例如，如果props从一个父comp传来，当props发生shallow change, 而你用了ownProps参数，mapStateToProps就会重新触发)
+NOTE: 
+* 
 
 
 
