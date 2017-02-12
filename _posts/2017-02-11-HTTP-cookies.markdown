@@ -1,7 +1,7 @@
 ---
 layout: post
-title: React-Redux usage 
-date: 2017-02-01
+title: HTTP COOKIE 
+date: 2017-02-012
 categories: translation
 ---
 ## HTTP Cookies
