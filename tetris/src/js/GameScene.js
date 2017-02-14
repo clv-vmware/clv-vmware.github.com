@@ -13,7 +13,9 @@ var square = new Square(new Vector(0, 0));
 var velocity = new Vector(0, 30);
 
 
-
+/**
+ * GameScene Class
+ */
 function GameScene () {
     this.blockMap = this.initBlockMap();
     this.blockClolorMap = this.initBlockColorMap();
@@ -57,8 +59,6 @@ GameScene.prototype = {
 
     updateBlockMap: function (pos) {
         // 检查 pos 和 现有堆积的squares 的连通性
-        
-
         var j = Math.floor(pos.x / 30);
         var i = Math.floor(pos.y / 30);
         // console.log(i, j);
