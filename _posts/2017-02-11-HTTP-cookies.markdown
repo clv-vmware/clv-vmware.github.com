@@ -9,6 +9,7 @@ categories: translation
 一个HTTP cookie(web cookie, browser cookie) 是一小段server 发送给user browser 的data，browser可能会存储它并跟随下一次请求send it back  to the same server.典型的，它用来判断是否两次请求来自同一个browser可以用来保持用户 logged-in。它记住无状态HTTP 协议的stateful info.
 
 Cookies 主要用于以下三种目的：
+
 * Session managemnent(user logins, shapping carts)
 * personalization（user preferences）
 * Tracking (analyzing user behavior)
@@ -28,13 +29,14 @@ Cookies 也会用于通常的client-side 存储。但如果有更好的方法就
  server 告诉client 要存一下这个cookie
  
  ```
- HTTP/1.0 200 OK
+HTTP/1.0 200 OK
 Content-type: text/html
 Set-Cookie: yummy_cookie=choco
 Set-Cookie: tasty_cookie=strawberry
 
 [page content]
  ```
+ 
  现在，对于每个发到server的request, browser 都会带上之前server 让存的cookies 使用Cookie header
  
 ```
