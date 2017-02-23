@@ -4,6 +4,7 @@ title: HTTP COOKIE
 date: 2017-02-012
 categories: translation
 ---
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
 ## HTTP access control(CORS)
 
 当一个资源去请求另一个跟它在不同domain的资源的时候会产生一个 **cross-origin HTTP**. 例如，一个在 http://domain-a.com域名下的页面请求了一个在 http://domain-b.com/image.jpg 下的img src. 今天互联网上会有许多需要去加载不同domain 资源的场景。
@@ -291,6 +292,25 @@ Content-Type: text/plain
 这一部分列出了server 对于access control requests 返回的 HTTP response headers.前一部分只是给出了一个overview
 
 ## Access-Control-Allow-Origin
+
+一个返回的resource 可能会有一个 ACAO header, origin 参数指定了request可以 access的URI。
+
+## Access-Control-Expose-Headers
+
+ACEH header可以让server把白名单暴露出来？
+例如
+
+```
+Access-Control-Expose-Headers: X-My-Custom-Header, X-Another-Custom-Header
+```
+
+上面例子允许 X-My-Custom-Header, X-Another-Custom-Header headers 可以暴露给浏览器
+
+## Access-Control-Max-Age
+
+ACMA header 指定了一个preflight request 可以被缓存多长时间（seconds）
+
+## Access-Control-Allow-Credentials
 
 
 

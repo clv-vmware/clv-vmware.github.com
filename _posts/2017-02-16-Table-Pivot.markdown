@@ -34,4 +34,9 @@ PivotData obj ,传入renderer function, 是PivotTable.js 的数据模型。它�
 * forEachMatchingRecord(criteria, callback):
 
 
+
+
+
+
+
  
