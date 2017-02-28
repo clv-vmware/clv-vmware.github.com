@@ -14,3 +14,25 @@ css transitions 提供一种方法在改变css属性时去控制animation speed�
 **transition 表示两个状态之间加时间去过渡，transition属性写在start state上，transition-property 需要是在start state 和final state 之间发生变化的属性**
 
 ？？ animations involve 两个状态之间的过度通常叫做 隐式transitions ,因为start final states 都是由browser定义的。
+
+## CSS properties used to define transitions
+
+
+
+## Detecting the start and completion of a transition
+
+你可以使用transitionend 事件去检测animation是否完成。这是一个TransitionEvent obj在典型的Event时间之上多了两个属性
+
+* propertyName: string表明哪一个属性的transition 执行完了
+* elapsedTime: float transition执行时间，这个值与transition-delay无关
+
+## when property value lists are of different lengths
+
+如果某项property 长度比其他短，就会循环重复为了match
+
+```
+div {
+  transition-property: opacity, left, top, height;
+  transition-duration: 3s, 5s;
+}
+```
