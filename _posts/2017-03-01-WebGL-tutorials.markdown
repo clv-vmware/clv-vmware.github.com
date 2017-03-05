@@ -4,6 +4,16 @@ title: HTTP COOKIE
 date: 2017-02-012
 categories: translation
 ---
+## WebGL tutorial
+
+webgl 使得web content可以不使用插件直接使用基于OpenGL ES 2.0的API 去进行渲染3D在canvas 。webgl程序由js 控制部分代码和 shader 部分组成。webgl elems 可以与其他HTML elems 混合或者作为background
+
+## before you start
+
+## in this tutorial
+* [get started with webgl]()
+* 
+
 ## get started with webgl
 
 ## preparing to render in 3d
@@ -63,3 +73,13 @@ gl.viewport(0, 0, canvas.width, canvas.height)
 ``` 
 
 当canvas 改变分辨率渲染时，它会经理scaling than its CSS style makes it occupy on the display. ? 使用css进行resize 大部分用于低分辨率场景并且要允许浏览器去做优化。downsacling 是可以的，并且会产生一个抗锯齿效果。最好可以依赖 MSAA and texture filtering implementations of the user's browser，而不是去强制更新并期待browser会有一个清晰的结果。
+
+
+## Adding 2D content to a WebGL context
+
+一旦我们创建了webgl ctx, 就可以画图了，我们能画的最简单的东西是2D的没有texture的obj,lets start
+
+## Drawing the scene
+
+## initializing the shaders
+
