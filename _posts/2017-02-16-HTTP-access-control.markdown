@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HTTP access control 
-date: 2017-02-012
+date: 2017-02-016
 categories: translation
 ---
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS

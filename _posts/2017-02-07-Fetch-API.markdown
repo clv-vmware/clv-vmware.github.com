@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fetch API
-date: 2017-02-01
+date: 2017-02-07
 categories: translation
 ---
 [原文](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HTTP COOKIE 
-date: 2017-02-012
+date: 2017-02-011
 categories: translation
 ---
 ## HTTP Cookies
