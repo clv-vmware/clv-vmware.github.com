@@ -1,6 +1,6 @@
 ---
 layout: post
-title: React-Redux usage 
+title: React-Redux binding lib 
 date: 2017-02-01
 categories: translation
 ---

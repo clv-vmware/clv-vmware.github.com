@@ -1,6 +1,6 @@
 ---
 layout: post
-title: React-Redux usage 
+title: HTML sections and outlines
 date: 2017-02-01
 categories: translation
 ---

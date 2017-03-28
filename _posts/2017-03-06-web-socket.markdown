@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HTTP COOKIE 
+title: web socket
 date: 2017-02-012
 categories: translation
 ---
