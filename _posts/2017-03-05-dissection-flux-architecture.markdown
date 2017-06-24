@@ -1,7 +1,7 @@
 ---
 layout: post
 title: flux architecture 
-date: 2017-03-005
+date: 2017-03-05
 categories: translation
 ---
 ## Dissection of Flux architecture or how to write your own

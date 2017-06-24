@@ -1,7 +1,7 @@
 ---
 layout: post
 title: table pivot
-date: 2017-02-016
+date: 2017-02-06
 categories: translation
 ---
 ## 表格转置总结

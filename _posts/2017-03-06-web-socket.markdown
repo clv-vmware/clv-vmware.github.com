@@ -1,7 +1,7 @@
 ---
 layout: post
 title: web socket
-date: 2017-03-006
+date: 2017-03-06
 categories: translation
 ---
 ## Writing WebSocket client applications

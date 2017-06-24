@@ -1,7 +1,7 @@
 ---
 layout: post
 title: immu with redux 
-date: 2017-03-005
+date: 2017-03-05
 categories: translation
 ---
 ## using immutable with Redux

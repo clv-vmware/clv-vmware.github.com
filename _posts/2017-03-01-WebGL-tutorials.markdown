@@ -1,7 +1,7 @@
 ---
 layout: post
 title: webgl tuto 
-date: 2017-03-001
+date: 2017-03-01
 categories: translation
 ---
 ## WebGL tutorial
