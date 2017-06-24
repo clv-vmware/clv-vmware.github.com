@@ -1,0 +1,58 @@
+---
+layout: post
+title: ENVIRIONMENT MAPS
+date: 2017-06-24
+categories: translation
+---
+
+CREATE YOUR OWN ENVIRONMENT MAPS
+Intro
+
+Environment maps 非常cool不论你在webgl或者opengl 里实现折射或者反射，都会用到它。看起来做一个environment map会很麻烦，事实上还好。
+
+首先你需要全景照片座位素材，有一些app可以帮助你，我使用的是ms 的photosynth app
+
+ENVIRONMENT MAPS
+
+在一开始，让我们讨论一下Environment Maps是什么。在webgl和opengl里，它指的是的cube maps。一个cube map其实就是一个被映射到一个cube内部的全景照片。想想一下，你站在山顶向远处平视，然后是左转头90度，然后再右转90度，或者向上90度，向下90度，这样你其实就看到了cube的每个面，如果这个cube足够大，我们就很难感知到它的边缘，就非常像一个environment，如果你觉得有一点confising,可以再看看篇文章Wikipedia article on cube maps
+
+HALF AXIED
+
+让我们稍微来看一下有关cube maps的一些术语。我们使用的坐标轴有三个：x y z, cube maps使用的images我们也用坐标轴信息来命名。6个图片，每个坐标轴有两个，分别是positive 和 negative.
+
+GET A PANORAMIC
+
+It’s worth pointing out that these panoramic apps often map back to a sphere, which is fine, but it does mean that we now need to convert it over to a cube so that it’s compatible with our WebGL-supported cube maps.
+
+CONVERT TO CUBE
+
+在这一部分我们只讨论怎样操作把全景图片变成cube maps而不会深入讨论原理。theory 是我们把图片load进3D application 像Maya Blender ,把它映射到一个 sphere。然后我们创建6个 90度的cameras, 每个对应cube的一个面。然后我们导出每个camera 看到的面，就得到了6个cube 面的image, 这里提供一份创建好的blender file 供你使用。
+
+把你的全景照片命名为 environment.jpg
+把全景照片和 Blender file放在一起
+load Blender file
+点击右边的 Animation
+等6个images ready
+很酷吧，在这个case 我其实之创建了一个camera, 然后animate it 6 frames 每次改变camera 的angle。 然后你需要把得到的图片进行rename
+
+Rename 0001.png to pos-z.png Rename 0002.png to neg-x.png Rename 0003.png to neg-z.png Rename 0004.png to pos-x.png Rename 0005.png to neg-y.png Rename 0006.png to pos-y.png
+
+ADD TO THE SCENE
+现在我们需要把这些处理好的images 载入scene中使用
+
+    var urls = [
+        'path/to/pos-x.png',
+         'path/to/neg-x.png',
+         'path/to/pos-y.png',
+         'path/to/neg-y.png',
+         'path/to/pos-z.png',
+         'path/to/neg-z.png'
+    ];
+    
+    cubemap = THREE.ImageUtils.loadTextureCube(urls);
+    cubemap.format = THREE.RGBFormat;
+    // 现在加上material，off you go!
+    var material = new THREE.MeshLambertMaterial({
+        color: 0xffffff,
+        envMap: cubemap
+    })
