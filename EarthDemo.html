@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)https://paperplanes.world/ -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <title>Paper Planes</title>
+    <div id="container"></div>
+
+
+
+
+
+    <script type="shader" id="vertShader">
+    varying vec2 vUv;
+
+    void main() {
+        vUv = uv;
+        gl_Position = vec4(position, 1.0);
+    }
+</script>
+
+    <script type="shader" id="fragShader">
+    void main() {
+        gl_FragColor = vec4(1.0);
+    }
+</script>
+
+
+    <script src="./earth/lib/three.min.js"></script>
+    <script src="./earth/lib/Detector.js"></script>
+    <script src="./earth/lib/stats.js"></script>
+    <!--<link rel="stylesheet" href="./assets/css/style.css" type="text/css">-->
+    <!--<link rel="manifest" href="https://paperplanes.world/manifest.json">-->
+
+
+    <!--<script src="./assets/js/planes.js"></script>-->
+
+    <script src="./earth/models/earth.js"></script>
+    <script src="./earth/js/backgroundView.js"></script>
+    <script src="./earth/lib/MathUtils.js"></script>
+    <script src="./earth/index.js"></script>
+</head>
+<body>
+</body>
+
+</html>
+
+
+
