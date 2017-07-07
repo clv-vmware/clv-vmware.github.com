@@ -1,0 +1,23 @@
+---
+layout: post
+title: ENVIRIONMENT MAPS
+date: 2017-07-05
+categories: THREE translation
+---
+
+## A Complete Guide to Flexbox
+
+### background
+
+flexbox 布局（flexible box）模块是为了提供更有效的布局，对齐, 分配container 中的items的space 的方法，即使他们的size 是unknown 或者dynamic的，这也是flex 一词的来源。
+flex layout主要的idea是让container可以调整它内部的items 的width/height(and prder) 去最好的适应available space (还有尽最大可能的适配各种deveices and screen sizes).一个flex container 扩展或者收缩内部的items 去fill available space.
+最重要的，flexbox layout与传统的regular layout（block是vertical-based, inline 是horizontal-based）不同，它是不可知方向的.
+
+### 基本术语
+flex container: properties fot the parent
+flex items: properties for the children
+
+常用属性
+display: 这定义了一个flex container,inline 或者block. 它enables a flex context for all 直系的children
+order: by default, items 按照原始顺序，order 这个属性控制了在container 中，item 出现的顺序
+flex-direction: 这个建立了main-axis
