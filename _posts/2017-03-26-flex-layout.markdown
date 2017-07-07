@@ -2,7 +2,7 @@
 layout: post
 title: FLEX LAYOUT
 date: 2017-03-26
-categories: translation
+categories: CSS
 ---
 ## flex
 

@@ -2,7 +2,7 @@
 layout: post
 title: webgl tuto 
 date: 2017-03-01
-categories: translation
+categories: WEBGL
 ---
 ## WebGL tutorial
 

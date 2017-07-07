@@ -2,7 +2,7 @@
 layout: post
 title: ENVIRIONMENT MAPS
 date: 2017-07-05
-categories: THREE translation
+categories: CSS TRANSLATION
 ---
 
 ## A Complete Guide to Flexbox

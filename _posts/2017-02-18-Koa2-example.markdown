@@ -2,7 +2,7 @@
 layout: post
 title: koa2 example
 date: 2017-02-18
-categories: translation
+categories: NODE
 ---
 
 ## Building A Server-Side Application With Async Functions and Koa 2

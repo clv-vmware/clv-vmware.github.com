@@ -2,7 +2,7 @@
 layout: post
 title: ENVIRIONMENT MAPS
 date: 2017-06-24
-categories: translation
+categories: THREE
 ---
 
 ## Infinite Tubes with THREE.JS
@@ -85,4 +85,8 @@ demo 如果有user interaction 就更好了，当user 移动鼠标就可以控�
 	curve.points[4].x = -mouse.position.x * 0.1;
 
 ```
+
+### That's it?
+
+真实的code 会比这篇post 解释的复杂一点，但是如果你理解了这些keys, 你应该会有一个大体的思路。如果有兴趣，就去check 一下第一个deom的 source code，我加了一些comments。有任何问题，feel free to [twitter](https://twitter.com/Mamboleoo) me:)
 

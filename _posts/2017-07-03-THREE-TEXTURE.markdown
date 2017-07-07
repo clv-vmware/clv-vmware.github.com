@@ -2,7 +2,7 @@
 layout: post
 title: ENVIRIONMENT MAPS
 date: 2017-07-03
-categories: THREE translation
+categories: THREE TRANSLATION
 ---
 
 ## Loading and Working with Textures

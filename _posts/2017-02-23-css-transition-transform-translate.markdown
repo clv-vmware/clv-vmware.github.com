@@ -2,7 +2,7 @@
 layout: post
 title: css transition transofrm
 date: 2017-02-23
-categories: translation
+categories: CSS
 ---
 
 transition: transition 是transition-property（需要过渡的属性） transition-duration, transition-timing-function transition-delay 的简写。它允许定义elem 的两个状态之间的过渡效果。不同的状态可能是使用伪类： hover :active 或者是用js动态设置css实现的。
