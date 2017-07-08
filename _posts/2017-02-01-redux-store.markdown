@@ -2,7 +2,7 @@
 layout: post
 title: Redux Store
 date: 2017-02-01
-categories: translation
+categories: TRANSLATION
 ---
 ## Store
 

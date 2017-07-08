@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ENVIRIONMENT MAPS
+title: Infinite Tubes
 date: 2017-06-24
-categories: THREE
+categories: THREE.JS
 ---
 
 ## Infinite Tubes with THREE.JS

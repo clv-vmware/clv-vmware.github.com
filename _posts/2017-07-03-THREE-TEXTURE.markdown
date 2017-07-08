@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ENVIRIONMENT MAPS
+title: THREE TEXTURE
 date: 2017-07-03
-categories: THREE TRANSLATION
+categories: THREE.JS TRANSLATION
 ---
 
 ## Loading and Working with Textures

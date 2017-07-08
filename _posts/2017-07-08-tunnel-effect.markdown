@@ -5,7 +5,7 @@ date: 2017-07-08
 categories: LEARNTHREE.JS TRANSLATION 
 ---
 
-##Tunnel Effect for Your Demo
+## Tunnel Effect for Your Demo
 
 这篇blog 会实现tunnel effect.这是一个经典的3D效果,它看起来很有意思并且code很简单。[doctor who](https://en.wikipedia.org/wiki/Doctor_Who)和 [stargate](https://en.wikipedia.org/wiki/Stargate) 也用到过这个很trendy 的效果。
 [Try the demo](http://jeromeetienne.github.io/tunnelgl/) 它是用之前[post](http://learningthreejs.com/blog/2011/12/20/boilerplate-for-three-js/) 的boilerplate 写的，code is simple and small.我们只是在boilerplate 基础上加了20 行code.我们会创建一个[THREE.Geometry](https://github.com/mrdoob/three.js/blob/master/src/core/Geometry.js) 来作为 tunnel，然后用一点texture trick 实现moving 的[visual illusion](https://en.wikipedia.org/wiki/Optical_illusion)

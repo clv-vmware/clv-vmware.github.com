@@ -1,10 +1,11 @@
 ---
 layout: post
-title: React-Redux binding lib 
+title: React-Redux Binding Lib 
 date: 2017-02-01
-categories: translation
+categories: TRANSLATION
 ---
-Usage with React
+
+## Usage with React
 
 首先要明确一点，Redux 跟 React 没有关系。你可以使用Redux with React,Angular, Ember, jQuery, or vanilla JavaScript. 但是，redux 和react 或者Deku 这样的lib配合的更好，因为他们通过状态的函数来描述UI，而Redux 通过通知更新状态来响应actions.
 
