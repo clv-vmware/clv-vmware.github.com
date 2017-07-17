@@ -18,6 +18,113 @@ flex container: properties fot the parent
 flex items: properties for the children
 
 常用属性
+
+**Parent** 
+
+
 display: 这定义了一个flex container,inline 或者block. 它enables a flex context for all 直系的children
-order: by default, items 按照原始顺序，order 这个属性控制了在container 中，item 出现的顺序
-flex-direction: 这个建立了main-axis
+
+```
+	.container {
+		display: flex;
+	}
+```
+
+flex-direction: 这个建立了main-axis, 这样就定义了flex items 在container 中的direction.flexbox (aside from optional wrapping )是一个single-direction layout. flex items 要不就是layout horizontal in rows 或者是 vertical columns.
+有几个值：
+ 
+ * row(default): 
+ * row-reverse: 
+ * column
+ * column-reverse
+
+ 
+```
+	.container {
+		flex-direction: row;
+	}
+```
+
+**flex-wrap**
+
+by default, flex items 会尽量的排在同一排。可以设置flex-wrap 让items wrap.?
+
+```
+	.container {
+		flex-wrap: nowrap|wrap| wrap-reverse;
+	}
+```
+
+**flex-flow**
+
+这是flex-direction flex-wrap 两个属性的shorthand.
+
+**justify-content**
+
+这个属性定义了沿着main axis的对齐方式，它帮助分配剩余空间，当一行里的items 是固定width，或者达到max size. 它也会影响在items溢出的时候的align.
+
+```
+	.container {
+		justify-content: flex-start|flex-end|center|space-between|space-around
+	}
+```
+
+**align-items**
+
+aligh-items 影响items 沿着cross axis 的对齐方式，也就是vertically方向上的justify-content
+
+```
+	.container {
+		align-items: flex-start|flex-end|center|stretch|baseline
+	}
+```
+
+**align-content**
+align-content 影响items在cross-axis方向上的对齐，当cross-axis有剩余空间时.
+
+```
+	.container {
+		align-content: flex-start|flex-end|center|strech|space-between|space-around
+	}
+```
+
+
+## CHIDREN
+
+
+**order**
+by default, items 按照原始顺序，order 这个属性控制了在container 中，item 出现的顺序
+
+```
+	.item {
+		order: <integer>;
+	}
+```
+
+**flex-grow**
+
+该属性定义了flex-item grow 的能力,如果有空间的话。它接受一个无单位的整数值，表示该flex-item占的比率。
+
+**flex-shrink**
+
+定义某个flex-item shrink的能力，接受一个整数
+
+```
+	.item {
+		flex-shrink: <number>;
+	}
+```
+
+**flex-basis**
+
+这个属性定义了在分配extra space 之前elem 的size.它既可以是a length 或者是关键字：`auto`(按照elem 的width ,height) `content`(按照content size)
+
+**flex**
+
+这是一个shorthand for `flex-grow` `flex-shrink` `flex-basis`.推荐使用shorthand 因为它会智能的去设置其他属性
+
+**align-self**
+
+
+
+
